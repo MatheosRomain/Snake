@@ -61,6 +61,7 @@ class Snake {
     const head = this.blocks[0];
     if (head.x === food.x && head.y == food.y) {
       food.setRandomPosition();
+      incrementLength();
       const { x, y } = this.calculateNewBlockPosition();
       this.addBlock(x, y);
     }
@@ -83,9 +84,31 @@ class Snake {
         block.setPosition(oldX, oldY);
         if (this.blockTouchHead(block)) {
           this.alive = false;
+          if (confirm("GAME OVER ! Do you want play again ?")) {
+            location.reload();
+          }
         }
       }
       block.draw();
     }
   }
+}
+
+let counterLength = 0;
+let counterTurn = 0;
+
+function incrementTurn() {
+  updateDisplayTurn(++counterTurn);
+}
+
+function updateDisplayTurn(val) {
+  document.getElementById("turn-count").innerHTML = val;
+}
+
+function incrementLength() {
+  updateDisplayLength(++counterLength);
+}
+
+function updateDisplayLength(val) {
+  document.getElementById("length-count").innerHTML = val;
 }

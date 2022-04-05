@@ -10,3 +10,33 @@ body {
 #game {
   background-color: black;
 }
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-play-again {
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-play-again:hover {
+  background-color: grey;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}

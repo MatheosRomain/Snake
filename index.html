@@ -8,7 +8,19 @@
     <title>Snake</title>
   </head>
   <body>
-    <canvas id="game" width="600" height="600"></canvas>
+    <h1>Snake Game</h1>
+    <div class="gameboard">
+      <div class="counter">
+        <h2>Length count</h2>
+        <div id="length-count">0</div>
+      </div>
+      <canvas id="game" width="500" height="500"></canvas>
+      <div class="counter">
+        <h2>Turn count</h2>
+        <div id="turn-count">0</div>
+      </div>
+    </div>
+    <button class="btn-play-again" onclick="reload()">Play Again</button>
     <script src="js/Class/Food.js"></script>
     <script src="js/Class/Block.js"></script>
     <script src="js/Class/Snake.js"></script>

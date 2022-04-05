@@ -1,4 +1,4 @@
-const GAME_SIZE = 600;
+const GAME_SIZE = 500;
 const SQUARE_SIZE = 20;
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -9,6 +9,7 @@ let currentDirection = "down";
 
 function detectKeyPressed() {
   document.addEventListener("keydown", function (event) {
+    incrementTurn();
     switch (event.key) {
       case "ArrowLeft":
         currentDirection = "left";
@@ -39,6 +40,9 @@ function update() {
   if (snake.alive) {
     setTimeout(update, 150);
   }
+}
+function reload() {
+  location.reload();
 }
 
 function start() {
